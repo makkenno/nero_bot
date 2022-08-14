@@ -11,6 +11,16 @@ client = discord.Client()
 
 channel_sent = None
 
+
+
+async def move_to_none():
+	channel = client.get_channel(CHANNEL_ID)
+	# チャンネル経由でサーバー内のボイスチャンネル全体を走査
+	for ch in channel.guild.voice_channels:
+		for member in ch.members:
+			# move_to(None)で特定のメンバーを切断する
+			await member.move_to(None)
+
 # TOOD: 特定のchannelにいるたらすぱを落とすことができる
 # TODO: 特定のchannelにいる場合に限定する
 # 60秒に一回ループ
@@ -18,8 +28,14 @@ channel_sent = None
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
-    # if now == '07:00':
-    await channel_sent.send(f'<@905072543919116308> 寝ろ！！{now}') 
+    # 指定したい時刻から9時間引いた時刻
+    # if now == '15:30':
+        await channel_sent.send(f'<@905072543919116308> おやすみなさい')
+        for ch in channel.guild.voice_channels:
+		for member in ch.members:
+			# move_to(None)で特定のメンバーを切断する
+			await member.move_to(None)
+            await channel_sent.send(f'{member}'おやすみ)
 
 @client.event
 async def on_ready():
