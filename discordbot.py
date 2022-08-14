@@ -26,7 +26,7 @@ async def loop():
         for member in ch.members:
 	    # move_to(None)で特定のメンバーを切断する
 	    await member.move_to(None)
-            wait channel_sent.send(f'{member}'おやすみ)
+            await channel_sent.send(f'{member}'おやすみ)
 
 @client.event
 async def on_ready():
