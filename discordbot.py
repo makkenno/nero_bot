@@ -23,13 +23,13 @@ async def ping(ctx):
     await ctx.send('更新したよ')
     
 # 60秒に一回ループ
-@tasks.loop(seconds=60)
+@tasks.loop(seconds=10)
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
     # if now == '07:00':
     channel = client.get_channel(CHANNEL_ID)
-    await channel.send('おはよう')  
+    await channel.send('10秒経ったよ')  
 
 #ループ処理実行
 loop.start()
@@ -37,3 +37,4 @@ loop.start()
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
+client.run(token)
