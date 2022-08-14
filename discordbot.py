@@ -11,16 +11,15 @@ client = discord.Client()
 
 channel_sent = None
 
-# TODO: @たらすぱとして投稿する
 # TOOD: 特定のchannelにいるたらすぱを落とすことができる
 # TODO: 特定のchannelにいる場合に限定する
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
-    # now = datetime.now().strftime('%H:%M')
+    now = datetime.now().strftime('%H:%M')
     # if now == '07:00':
-    await channel_sent.send('<@905072543919116308>60秒経ったよ') 
+    await channel_sent.send(f'<@905072543919116308> 寝ろ！！{now}') 
 
 @client.event
 async def on_ready():
