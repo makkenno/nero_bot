@@ -12,12 +12,12 @@ client = discord.Client()
 channel_sent = None
 
 # 60秒に一回ループ
-@tasks.loop(seconds=10)
+@tasks.loop(secounds=60)
 async def loop():
     # 現在の時刻
     # now = datetime.now().strftime('%H:%M')
     # if now == '07:00':
-    await channel_sent.send('10秒経ったよ') 
+    await channel_sent.send('60秒経ったよ') 
 
 @client.event
 async def on_ready():
