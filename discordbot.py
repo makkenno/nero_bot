@@ -1,9 +1,14 @@
+import discord
 from discord.ext import commands, tasks
 from os import getenv
 from datetime import datetime
 import traceback
 
+# https://discord.com/channels/1008227908617248798/1008227908617248802（この部分）
+CHANNEL_ID = 1008227908617248802
+
 bot = commands.Bot(command_prefix='/')
+client = discord.Client()
 
 
 @bot.event
@@ -15,7 +20,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send('やぴまる')
+    await ctx.send('更新したよ')
     
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
