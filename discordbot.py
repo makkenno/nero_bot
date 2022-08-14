@@ -23,12 +23,10 @@ async def loop():
     # if now == '15:30':
     await channel_sent.send(f'<@905072543919116308> おやすみなさい')
     for ch in channel_sent.guild.voice_channels:
-        await channel_sent.send(f'<@905072543919116308> おやすみなさい1')
         for member in ch.members:
-            await channel_sent.send(f'<@905072543919116308> おやすみなさい2')
             # move_to(None)で特定のメンバーを切断する
-            #await member.move_to(None)
-            #await channel_sent.send(f'{member}おやすみ')
+            await member.move_to(None)
+            await channel_sent.send(f'おやすみ')
 
 @client.event
 async def on_ready():
