@@ -22,8 +22,9 @@ async def loop():
     for ch in channel_sent.guild.voice_channels:
         for member in ch.members:
             # move_to(None)で特定のメンバーを切断する
-            if member.mention == '<@905072543919116308>':
-                await channel_sent.send(f'たらすぱ見つけた')
+            await channel_sent.send(f'たらすぱ見つけた')
+
+            #if member.mention == '<@905072543919116308>':
                 #await member.move_to(None)
                 #await channel_sent.send(f'{member.mention} おやすみ')
 
