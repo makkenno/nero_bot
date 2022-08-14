@@ -20,6 +20,7 @@ async def loop():
     # 指定したい時刻から9時間引いた時刻
     # if now == '15:30':
     for ch in channel_sent.guild.voice_channels:
+        await channel_sent.send(f'ボイスチャンネルの取得完了')
         for member in ch.members:
             # move_to(None)で特定のメンバーを切断する
             if member.mention == '<@905072543919116308>':
