@@ -13,7 +13,7 @@ channel_sent = None
 
 
 # 60秒に一回ループ
-@tasks.loop(seconds=30)
+@tasks.loop(seconds=10)
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
@@ -23,8 +23,9 @@ async def loop():
         for member in ch.members:
             # move_to(None)で特定のメンバーを切断する
             if member.mention == '<@905072543919116308>':
-                await member.move_to(None)
-                await channel_sent.send(f'{member.mention} おやすみ')
+                await channel_sent.send(f'たらすぱ見つけた')
+                #await member.move_to(None)
+                #await channel_sent.send(f'{member.mention} おやすみ')
 
 @client.event
 async def on_ready():
