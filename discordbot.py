@@ -5,7 +5,7 @@ from datetime import datetime
 import traceback
 
 # https://discord.com/channels/1008227908617248798/1008227908617248802（この部分）
-CHANNEL_ID = '1008227908617248802'
+CHANNEL_ID = 1008227908617248802
 
 client = discord.Client()
 
