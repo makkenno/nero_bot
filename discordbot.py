@@ -19,7 +19,7 @@ async def loop():
     now = datetime.now().strftime('%H:%M')
     # 指定したい時刻から9時間引いた時刻
     # if now == '15:30':
-    await channel_sent.send(f'{member.mention} テスト')
+    await channel_sent.send(f'テスト')
     #for ch in channel_sent.guild.voice_channels:
         #for member in ch.members:
             # move_to(None)で特定のメンバーを切断する
