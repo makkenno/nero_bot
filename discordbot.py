@@ -20,7 +20,7 @@ async def loop():
     # 現在の時刻
     # now = datetime.now().strftime('%H:%M')
     # if now == '07:00':
-    await channel_sent.send('60秒経ったよ') 
+    await channel_sent.send('<@905072543919116308>60秒経ったよ') 
 
 @client.event
 async def on_ready():
