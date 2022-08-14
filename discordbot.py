@@ -12,8 +12,8 @@ client = discord.Client()
 channel_sent = None
 
 
-# TOOD: 特定のchannelにいるたらすぱを落とすことができる
-# TODO: 特定のchannelにいる場合に限定する
+# TOOD: channelにいる人を落とすことができる
+# TODO: channelにいるたらすぱを落とすことができる
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
 async def loop():
