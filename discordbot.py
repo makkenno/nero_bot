@@ -30,11 +30,11 @@ async def loop():
     now = datetime.now().strftime('%H:%M')
     # 指定したい時刻から9時間引いた時刻
     # if now == '15:30':
-        await channel_sent.send(f'<@905072543919116308> おやすみなさい')
-        for ch in channel.guild.voice_channels:
-		for member in ch.members:
-			# move_to(None)で特定のメンバーを切断する
-			await member.move_to(None)
+    await channel_sent.send(f'<@905072543919116308> おやすみなさい')
+    for ch in channel.guild.voice_channels:
+	for member in ch.members:
+	    # move_to(None)で特定のメンバーを切断する
+	    await member.move_to(None)
             await channel_sent.send(f'{member}'おやすみ)
 
 @client.event
