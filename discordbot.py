@@ -18,8 +18,8 @@ async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
     # 指定したい時刻から9時間引いた時刻
-    if now != '15:30':
-        return
+    #if now != '15:30':
+        #return
     for ch in channel_sent.guild.voice_channels:
         for member in ch.members:
             if member.id != 905072543919116308:
