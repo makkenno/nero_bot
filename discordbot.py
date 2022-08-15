@@ -22,9 +22,10 @@ async def loop():
         #return
     for ch in channel_sent.guild.voice_channels:
         for member in ch.members:
-            if member.id == 905072543919116308:
-                await member.move_to(None)
-                await channel_sent.send(f'{member.mention} おやすみ')
+            if member.id != 905072543919116308:
+                continue
+            await member.move_to(None)
+            await channel_sent.send(f'{member.mention} おやすみ')
 
 @client.event
 async def on_ready():
