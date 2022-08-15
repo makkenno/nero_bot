@@ -13,7 +13,7 @@ channel_sent = None
 
 
 # 60秒に一回ループ
-@tasks.loop(seconds=60)
+@tasks.loop(seconds=10)
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
@@ -22,10 +22,9 @@ async def loop():
         #return
     for ch in channel_sent.guild.voice_channels:
         for member in ch.members:
-            if member.id != 905072543919116308:
-                return
-            await member.move_to(None)
-            await channel_sent.send(f'{member.mention} おやすみ')
+            if member.id == 905072543919116308:
+                await member.move_to(None)
+                await channel_sent.send(f'{member.mention} おやすみ')
 
 @client.event
 async def on_ready():
