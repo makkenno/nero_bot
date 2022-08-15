@@ -11,9 +11,11 @@ client = discord.Client()
 
 channel_sent = None
 
+target_members = [905072543919116308, 689663907257909248]
+
 
 # 60秒に一回ループ
-@tasks.loop(seconds=10)
+@tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
@@ -22,7 +24,7 @@ async def loop():
         #return
     for ch in channel_sent.guild.voice_channels:
         for member in ch.members:
-            if member.id != 905072543919116308:
+            if member.id not in target_members:
                 continue
             await member.move_to(None)
             await channel_sent.send(f'{member.mention} おやすみ')
