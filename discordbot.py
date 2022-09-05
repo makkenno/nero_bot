@@ -19,13 +19,13 @@ target_time =  ['13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00',
 
 
 # 60秒に一回ループ
-@tasks.loop(seconds=30)
+@tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
     target_member = random.choice(target_members)
     now = datetime.now().strftime('%H:%M')
-    #if not (now in target_time):
-    #   return
+    if not (now in target_time):
+       return
     for ch in channel_sent.guild.voice_channels:
         for member in ch.members:
             if member.id == target_member:
