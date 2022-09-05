@@ -1,4 +1,5 @@
 import discord
+import random
 from discord.ext import commands, tasks
 from os import getenv
 from datetime import datetime
@@ -12,6 +13,9 @@ client = discord.Client()
 channel_sent = None
 
 target_members = [905072543919116308, 689663907257909248]
+# 指定したい時刻から9時間引いた時刻
+target_time =  ['13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30']
+random_num = random.random()
 
 
 # 60秒に一回ループ
@@ -19,8 +23,7 @@ target_members = [905072543919116308, 689663907257909248]
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
-    # 指定したい時刻から9時間引いた時刻
-    if now != '15:30':
+    if not (now in target_time and random_num < 0.5):
         return
     for ch in channel_sent.guild.voice_channels:
         for member in ch.members:
