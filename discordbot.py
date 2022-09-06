@@ -29,8 +29,8 @@ async def loop():
     for ch in channel_sent.guild.voice_channels:
         for member in ch.members:
             if member.id == target_member:
-                await member.move_to(None)
-                await channel_sent.send(f'{member.mention} バイバイ')
+#                 await member.move_to(None)
+#                 await channel_sent.send(f'{member.mention} バイバイ')
                 break
 
             
